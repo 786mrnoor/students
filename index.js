@@ -22,8 +22,8 @@ async function main() {
     }
 }
 
-server.use(express.json());
 server.use(cors());
+server.use(express.json());
 server.use('/students', studentRouter.router);
 server.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
 server.use('*', (req, res)=>{
